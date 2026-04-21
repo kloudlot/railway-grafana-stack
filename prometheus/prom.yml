@@ -5,7 +5,11 @@ scrape_configs:
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']
-
+  - job_name: 'nestjs-app'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['amused-enjoyment.railway.internal:8080']
+    
   # - job_name: 'example_api'
   #   scheme: http
   #   static_configs:
